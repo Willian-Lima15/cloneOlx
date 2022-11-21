@@ -1,0 +1,15 @@
+.container{
+  background-color: black;
+  color: rgb(155, 153, 153);
+}
+
+h6 {
+  padding: 1rem;
+}
+
+.recetes {
+  background-color: white;
+  margin: 1em;
+  border-radius: 2px;
+}
+

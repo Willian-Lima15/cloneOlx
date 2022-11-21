@@ -1,0 +1,43 @@
+header {
+  padding: 1em;
+}
+
+.row{
+  display: flex;
+  align-items: center;
+}
+
+.anuncios {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(155, 153, 153);
+  display: flex;
+}
+
+a:hover {
+  color: blue;
+}
+
+hr {
+  margin: 0;
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.botoes > button {
+  width: 49%;
+  border-radius: 15px;
+}
+
+img {
+  width: 8%;
+  position: absolute;
+  margin-top: -67px;
+}
