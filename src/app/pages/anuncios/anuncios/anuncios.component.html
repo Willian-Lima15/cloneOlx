@@ -1,0 +1,6 @@
+<div class="container">
+  <app-anuncios-recentes
+  [listaAnuncios]="anuncios"
+  *ngIf="anuncios$ |async as anuncios"
+  ></app-anuncios-recentes>
+</div>

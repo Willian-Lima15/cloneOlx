@@ -1,5 +1,5 @@
+import { AnunciosModule } from './../pages/anuncios/anucios.module';
 import { NgModule } from "@angular/core";
-import { AnunciosRecentesComponent } from "../pages/anuncios/anuncios-recentes/anuncios-recentes.component";
 import { SeachComponent } from "../shared/components/seach/seach.component";
 import { HomeComponent } from "./home/home.component";
 
@@ -7,9 +7,10 @@ import { HomeComponent } from "./home/home.component";
   declarations:[
     HomeComponent,
     SeachComponent,
-    AnunciosRecentesComponent
   ],
-  imports:[]
+  imports:[
+    AnunciosModule
+  ]
 })
 
 export class HomeModule {}

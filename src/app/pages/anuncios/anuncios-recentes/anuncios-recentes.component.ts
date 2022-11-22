@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AnunciosModel } from './../../../shared/models/anuncios/anuncios';
+import { AnunciosService } from './../../../core/services/anuncios.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-anuncios-recentes',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnunciosRecentesComponent implements OnInit {
 
-  constructor() { }
+  anuncios: AnunciosModel = new AnunciosModel();
+  @Input()listaAnuncios: AnunciosModel[]=[]
+
+  constructor(
+
+    ) { }
 
   ngOnInit() {
+
   }
+
+
+
+
 
 }
