@@ -16,33 +16,35 @@
         <hr />
       </div>
       <div class="row">
-        <div class="col-12 mt-1">
-          <label for="" class="form-label" >Apelido</label>
-        </div>
-        <div class="col-12 d-flex text-center">
-          <input type="email" class="form-control w-100"/>
-        </div>
-        <div class="col-12 mt-1">
-          <label for="" class="form-label" >E-mail</label>
-        </div>
-        <div class="col-12 d-flex text-center">
-          <input type="email" class="form-control w-100"/>
-        </div>
-        <div class="col-12 mt-1">
-          <label for="" class="form-label" >Senha</label>
-        </div>
-        <div class="col-12 d-flex text-center">
-          <input type="password" class="form-control w-100"/>
-        </div>
-        <div class="col-12 mt-2">
-          <button class="btn btn-warning w-100 rounded-pill">Cadastre-se</button>
-        </div>
-        <div class="mt-2">
-          <hr class="w-100">
-        </div>
-        <div class="col-12 text-center">
-          <p>Já tem uma conta? <a [routerLink]="['/login']">Entrar</a></p>
-        </div>
+        <form [formGroup]="form">
+          <div class="col-12 mt-1">
+            <label for="" class="form-label" >Apelido</label>
+          </div>
+          <div class="col-12 d-flex text-center">
+            <input type="email" class="form-control w-100" formControlName="apelido"/>
+          </div>
+          <div class="col-12 mt-1">
+            <label for="" class="form-label" >E-mail</label>
+          </div>
+          <div class="col-12 d-flex text-center">
+            <input type="email" class="form-control w-100" formControlName="email"/>
+          </div>
+          <div class="col-12 mt-1">
+            <label for="" class="form-label" >Senha</label>
+          </div>
+          <div class="col-12 d-flex text-center">
+            <input type="password" class="form-control w-100" formControlName="senha"/>
+          </div>
+          <div class="col-12 mt-2">
+            <button class="btn btn-warning w-100 rounded-pill" (click)="add()">Cadastre-se</button>
+          </div>
+          <div class="mt-2">
+            <hr class="w-100">
+          </div>
+          <div class="col-12 text-center">
+            <p>Já tem uma conta? <a [routerLink]="['/login']">Entrar</a></p>
+          </div>
+        </form>
       </div>
     </div>
   </div>

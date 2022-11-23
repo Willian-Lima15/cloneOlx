@@ -1,6 +1,7 @@
+import { CadastroUsuariosComponent } from './../cadastro-usuarios/cadastro-usuarios.component';
 import { UsuariosService } from './../../core/services/usuarios.service';
 import { UsuariosModel } from './../../shared/models/usuarios/usuario';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +11,26 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   usuarios:UsuariosModel[]=[]
+  @ViewChild(CadastroUsuariosComponent) login!: CadastroUsuariosComponent
 
   constructor(
     private usuariosService: UsuariosService
   ) { }
 
   ngOnInit() {
-    this.usuariosService.getUsers().subscribe((res:any) => {
+
+  }
+
+  logar() {
+    if(this.usuarios){
+      alert('eii')
+    }
+  }
+
+  user(id:number){
+    this.usuariosService.getUser(id).subscribe((res:any) => {
+      console.log(res);
+
       this.usuarios = res
     })
   }

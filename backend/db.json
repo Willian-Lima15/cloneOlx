@@ -1,23 +1,36 @@
-{ "usuarios":[
-  {
-    "id":1,
-    "apelido":"",
-    "email":"",
-    "senha":""
-  }
-],
-  "anuncios": [
+{
+  "usuarios": [
     {
-      "id":1,
-      "titulo":"teste titulo",
-      "descricao":"teste",
-      "valor":335.50
+      "id": 1,
+      "apelido": "",
+      "email": "",
+      "senha": ""
     },
     {
-      "id":2,
-      "titulo":"titulo",
-      "descricao":"lorem texte",
-      "valor":400
+      "apelido": "will",
+      "email": "teste@teste",
+      "senha": "78945",
+      "id": 2
+    },
+    {
+      "apelido": "athum",
+      "email": "athum@att",
+      "senha": "56845",
+      "id": 3
+    }
+  ],
+  "anuncios": [
+    {
+      "id": 1,
+      "titulo": "teste titulo",
+      "descricao": "teste",
+      "valor": 335.5
+    },
+    {
+      "id": 2,
+      "titulo": "titulo",
+      "descricao": "lorem texte",
+      "valor": 400
     }
   ]
 }

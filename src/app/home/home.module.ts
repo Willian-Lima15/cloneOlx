@@ -7,7 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AnunciosModule } from "../pages/anuncio/anuncios.module";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -24,6 +24,7 @@ const routes: Routes = [
   imports:[
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes),
     CommonModule,
     AnunciosModule

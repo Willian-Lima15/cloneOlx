@@ -1,3 +1,4 @@
+import { first } from 'rxjs/operators';
 import { UsuariosModel } from './../../shared/models/usuarios/usuario';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -14,6 +15,14 @@ constructor(
 
   getUsers():Observable<UsuariosModel>{
     return this.HttpClient.get<UsuariosModel>(this.apiUrl)
+  }
+
+  getUser(id:number){
+    return this.HttpClient.get<UsuariosModel>(`${this.apiUrl}/${id}`)
+  }
+
+  create(usuario: UsuariosModel){
+    return this.HttpClient.post<UsuariosModel>(this.apiUrl, usuario).pipe(first())
   }
 
 }
