@@ -1,3 +1,5 @@
+import { UsuariosService } from './../../core/services/usuarios.service';
+import { UsuariosModel } from './../../shared/models/usuarios/usuario';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  usuarios:UsuariosModel[]=[]
+
+  constructor(
+    private usuariosService: UsuariosService
+  ) { }
 
   ngOnInit() {
+    this.usuariosService.getUsers().subscribe((res:any) => {
+      this.usuarios = res
+    })
   }
 
 }
