@@ -1,3 +1,4 @@
+import { AuthGuardService } from './../core/services/authGuard.service';
 import { CadastroUsuariosComponent } from './cadastro-usuarios/cadastro-usuarios.component';
 import { UsuariosService } from './../core/services/usuarios.service';
 import { LoginComponent } from './login/login.component';
@@ -11,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path:'home', component:HomeComponent, canActivate:[AuthGuardService]},
   {path:'login', component:LoginComponent},
   {path: 'cadastro', component: CadastroUsuariosComponent}
 ]
