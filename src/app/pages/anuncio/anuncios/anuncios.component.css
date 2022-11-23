@@ -1,0 +1,10 @@
+.container {
+  background-color: black;
+}
+
+.recetes {
+  background-color: white;
+  margin: 0 15px 0 15px;
+  padding: 1rem;
+  border-radius: 5px;
+}
