@@ -19,4 +19,9 @@ export class AnunciosService {
   create(anuncios:AnunciosModel){
     return this.http.post<AnunciosModel[]>(this.apiUrl, anuncios).pipe(first())
   }
+
+  delete(id:number): Observable<AnunciosModel[]>{
+    const url = `${this.apiUrl}/${id}`
+    return this.http.delete<AnunciosModel[]>(url).pipe(first())
+  }
 }

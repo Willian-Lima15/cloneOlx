@@ -1,8 +1,8 @@
 import { AnunciosService } from 'src/app/core/services/anuncios.service';
 import { Observable, of } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AnunciosModel } from 'src/app/shared/models/anuncios/anuncios';
-import { catchError } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-anuncios',
@@ -16,19 +16,15 @@ export class AnunciosComponent implements OnInit {
   constructor(
     private anunciosService: AnunciosService
   ) {
-    this.anuncios$ = this.anunciosService.getAnuncios().pipe(
-      catchError(error => {
-        return of([])
-      }))
+    this.anuncios$ = this.anunciosService.getAnuncios().pipe(tap(res => console.log(res)
+    ))
   }
 
-  ngOnInit() {
-
-  }
+  ngOnInit(){}
 
   onErro(){}
 
-  excluir() {
-
+  excluir(id: number){
+     this.anunciosService.delete(id).subscribe()
   }
 }
