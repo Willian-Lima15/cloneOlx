@@ -15,4 +15,8 @@ export class AnunciosService {
   getAnuncios(): Observable<AnunciosModel[]> {
     return this.http.get<AnunciosModel[]>(this.apiUrl).pipe(first())
   }
+
+  create(anuncios:AnunciosModel){
+    return this.http.post<AnunciosModel[]>(this.apiUrl, anuncios).pipe(first())
+  }
 }

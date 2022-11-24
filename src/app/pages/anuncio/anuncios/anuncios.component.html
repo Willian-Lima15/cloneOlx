@@ -5,6 +5,7 @@
     <app-lista-anuncios
       class="d-flex"
       [listaAnucios]="anuncios"
+      (delete)="excluir"
       *ngIf="anuncios$ | async as anuncios"
     ></app-lista-anuncios>
   </div>

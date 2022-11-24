@@ -28,4 +28,7 @@ export class AnunciosComponent implements OnInit {
 
   onErro(){}
 
+  excluir() {
+
+  }
 }

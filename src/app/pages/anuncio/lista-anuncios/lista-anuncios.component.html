@@ -2,9 +2,9 @@
   <div class="card m-2" style="width: 10rem">
     <img src="../../../../assets/ds.jpg" class="card-img-top" alt="..." />
     <div class="card-body">
-      <h5 class="card-title">{{ anuncio.titulo }}</h5>
+      <p class="card-title text-uppercase">{{ anuncio.titulo }}</p>
       <p class="card-text">{{ anuncio.descricao }}</p>
-      <p>R$ {{ anuncio.valor }}</p>
+      <p (click)="excluir()">R$ {{ anuncio.valor }}</p>
     </div>
   </div>
 </div>

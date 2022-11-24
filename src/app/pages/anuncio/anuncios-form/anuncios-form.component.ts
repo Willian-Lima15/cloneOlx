@@ -1,5 +1,7 @@
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { AnunciosService } from 'src/app/core/services/anuncios.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-anucio-form',
@@ -11,7 +13,9 @@ export class AnunciosFormComponent implements OnInit {
   anuncioForm!:FormGroup
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private anunciosSerice: AnunciosService,
+    private router:Router
     ) { }
 
   ngOnInit() {
@@ -26,5 +30,16 @@ export class AnunciosFormComponent implements OnInit {
       valor:['']
     })
   }
+
+  salvar(){
+    this.anunciosSerice.create(this.anuncioForm.value).subscribe(()=> {
+      this.router.navigate([''])
+    })
+  }
+
+  excluir(){
+
+  }
+
 
 }

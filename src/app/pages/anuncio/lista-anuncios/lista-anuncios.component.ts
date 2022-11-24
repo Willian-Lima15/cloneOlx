@@ -1,5 +1,5 @@
 import { AnunciosModel } from 'src/app/shared/models/anuncios/anuncios';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-lista-anuncios',
@@ -9,9 +9,14 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ListaAnunciosComponent implements OnInit {
 
   @Input() listaAnucios: AnunciosModel[]=[]
+  @Output() delete = new EventEmitter(false)
   constructor() { }
 
   ngOnInit() {
+  }
+
+  excluir(){
+    this.delete.emit(true)
   }
 
 }
