@@ -1,3 +1,4 @@
+
 import { CadastroUsuariosComponent } from './cadastro-usuarios/cadastro-usuarios.component';
 import { UsuariosService } from './../core/services/usuarios.service';
 import { LoginComponent } from './login/login.component';
@@ -8,9 +9,11 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AnunciosModule } from "../pages/anuncio/anuncios.module";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthGuardService } from '../core/services/authGuard.service';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path:'home', component:HomeComponent, canActivate:[AuthGuardService]},
   {path:'login', component:LoginComponent},
   {path: 'cadastro', component: CadastroUsuariosComponent}
 ]

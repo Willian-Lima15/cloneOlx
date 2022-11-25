@@ -1,8 +1,7 @@
 import { AnunciosService } from 'src/app/core/services/anuncios.service';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { AnunciosModel } from 'src/app/shared/models/anuncios/anuncios';
-import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-anuncios',
@@ -14,18 +13,19 @@ export class AnunciosComponent implements OnInit {
   anuncios$: Observable<AnunciosModel[]>
 
   constructor(
-    private anunciosService: AnunciosService
+    private anunciosService: AnunciosService,
   ) {
-    this.anuncios$ = this.anunciosService.getAnuncios().pipe(
-      catchError(error => {
-        return of([])
-      }))
+    this.anuncios$ = this.anunciosService.getAnuncios().pipe()
   }
 
-  ngOnInit() {
+  ngOnInit(){
 
   }
 
-  onErro(){}
+  // localiza(event:any){
+  //   debugger
+  //   const id = this.route.snapshot.paramMap.get('id')
+  //   this.anuncios$ = this.anunciosService.getAnuncioById(this.id)
+  // }
 
 }
