@@ -1,11 +1,10 @@
-import { LoginComponent } from './home/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path: '',pathMatch:'full', redirectTo:'home'},
-  {path: 'anuncios', loadChildren: () => import('./pages/anuncio/anuncios.module').then(m => m.AnunciosModule)},
-  {path:'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule)}
+  {path: '',pathMatch:'full', redirectTo:'login'},
+  {path:'home',loadChildren:() => import('./home/home.module')}
+
 ];
 
 @NgModule({

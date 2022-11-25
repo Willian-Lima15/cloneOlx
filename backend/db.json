@@ -5,65 +5,6 @@
       "apelido": "",
       "email": "",
       "senha": ""
-    },
-    {
-      "apelido": "will",
-      "email": "teste@teste",
-      "senha": "78945",
-      "id": 2
-    },
-    {
-      "apelido": "athum",
-      "email": "athum@att",
-      "senha": "56845",
-      "id": 3
-    }
-  ],
-  "anuncios": [
-    {
-      "id": 1,
-      "titulo": "teste titulo",
-      "descricao": "teste",
-      "valor": 335.5
-    },
-    {
-      "id": 2,
-      "titulo": "titulo",
-      "descricao": "lorem texte",
-      "valor": 400
-    },
-    {
-      "titulo": "ueyweiuywqi",
-      "descricao": "wuigwigeiwgeiwugeiw",
-      "categoria": "",
-      "vendAluga": "",
-      "localizacao": "",
-      "endereco": "",
-      "foto": "",
-      "valor": "",
-      "id": 3
-    },
-    {
-      "titulo": "tete",
-      "descricao": "xbcjhzxbc",
-      "categoria": "",
-      "vendAluga": "",
-      "localizacao": "",
-      "endereco": "",
-      "foto": "",
-      "valor": "",
-      "id": 4
-    },
-    {
-      "titulo": "casa na urbis",
-      "descricao": "perto da rua e escola",
-      "categoria": "",
-      "vendAluga": "",
-      "localizacao": "",
-      "endereco": "",
-      "foto": "",
-      "valor": "",
-      "id": 5
     }
   ]
 }

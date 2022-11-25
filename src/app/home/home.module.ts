@@ -1,38 +1,25 @@
-
-import { CadastroUsuariosComponent } from './cadastro-usuarios/cadastro-usuarios.component';
-import { UsuariosService } from './../core/services/usuarios.service';
+import { CreateComponent } from './create/create.component';
 import { LoginComponent } from './login/login.component';
-import { NgModule } from "@angular/core";
-import { HomeComponent } from "./home/home.component";
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { AnunciosModule } from "../pages/anuncio/anuncios.module";
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthGuardService } from '../core/services/authGuard.service';
+import { HomeComponent } from './home/home.component';
+import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path:'home', component:HomeComponent, canActivate:[AuthGuardService]},
-  {path:'login', component:LoginComponent},
-  {path: 'cadastro', component: CadastroUsuariosComponent}
+  {path:'home',component:HomeComponent},
+  {path: 'login', component: LoginComponent},
+  {path:'create', component:CreateComponent}
 ]
 
 @NgModule({
-  declarations:[
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes)
+  ],
+  declarations: [
     HomeComponent,
     LoginComponent,
-    CadastroUsuariosComponent
-  ],
-  imports:[
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule.forChild(routes),
-    CommonModule,
-    AnunciosModule
-  ],
-  providers:[UsuariosService]
+    CreateComponent
+  ]
 })
-
-export class HomeModule {}
+export class HomeModule { }
