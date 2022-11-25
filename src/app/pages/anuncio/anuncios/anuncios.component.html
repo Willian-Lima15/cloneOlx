@@ -5,8 +5,8 @@
     <app-lista-anuncios
       class="d-flex"
       [listaAnucios]="anuncios"
-      (delete)="excluir"
       *ngIf="anuncios$ | async as anuncios"
+      (loca)="localiza()"
     ></app-lista-anuncios>
   </div>
 </div>

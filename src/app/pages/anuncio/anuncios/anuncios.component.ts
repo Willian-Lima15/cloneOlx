@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { Component, Input, OnInit } from '@angular/core';
 import { AnunciosModel } from 'src/app/shared/models/anuncios/anuncios';
 import { catchError, tap } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-anuncios',
@@ -12,19 +13,25 @@ import { catchError, tap } from 'rxjs/operators';
 export class AnunciosComponent implements OnInit {
 
   anuncios$: Observable<AnunciosModel[]>
+  id!:number;
 
   constructor(
-    private anunciosService: AnunciosService
+    private anunciosService: AnunciosService,
+    private route: ActivatedRoute
   ) {
-    this.anuncios$ = this.anunciosService.getAnuncios().pipe(tap(res => console.log(res)
-    ))
+    this.anuncios$ = this.anunciosService.getAnuncios().pipe()
   }
 
-  ngOnInit(){}
+  ngOnInit(){
 
-  onErro(){}
 
-  excluir(id: number){
-     this.anunciosService.delete(id).subscribe()
   }
+
+
+  localiza(){
+    debugger
+    const id = this.route.snapshot.paramMap.get('id')
+    this.anuncios$ = this.anunciosService.getAnuncioById(this.id)
+  }
+
 }
