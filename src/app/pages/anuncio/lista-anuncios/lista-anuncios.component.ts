@@ -14,9 +14,11 @@ export class ListaAnunciosComponent implements OnInit {
   anuncios!: Observable<AnunciosModel[]>
 
   @Input() listaAnucios: AnunciosModel[]=[]
-  @Output() loca = new EventEmitter(false)
+  //@Output() loca = new EventEmitter(false)
+  id!:number
   constructor(
     private AnunciosService:AnunciosService,
+    private route: ActivatedRoute
     ) { }
 
   ngOnInit() {
@@ -24,7 +26,9 @@ export class ListaAnunciosComponent implements OnInit {
   }
 
   localizar(){
-    this.loca.emit(true)
+    debugger
+    const id = this.route.snapshot.paramMap.get('id')
+    this.AnunciosService.getAnuncioById(this.id)
   }
 
 }

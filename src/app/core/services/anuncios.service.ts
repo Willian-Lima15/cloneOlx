@@ -27,6 +27,6 @@ export class AnunciosService {
 
   delete(id:number): Observable<AnunciosModel[]>{
     const url = `${this.apiUrl}/${id}`
-    return this.http.delete<AnunciosModel[]>(url).pipe(first())
+    return this.http.delete<AnunciosModel[]>(url)
   }
 }
