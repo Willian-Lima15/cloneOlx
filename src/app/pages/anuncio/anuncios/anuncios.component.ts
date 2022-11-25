@@ -2,7 +2,6 @@ import { AnunciosService } from 'src/app/core/services/anuncios.service';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { AnunciosModel } from 'src/app/shared/models/anuncios/anuncios';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-anuncios',
