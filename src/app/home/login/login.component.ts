@@ -1,5 +1,5 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,9 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  nome!: string;
-  senha!:number;
-  private userform!: FormGroup
+
+  @ViewChild("nome") nome!: ElementRef;
+  @ViewChild("senha") senha!:ElementRef;
+
+  userform!: FormGroup
+
   constructor(
     private router: Router,
     private fb:FormBuilder
@@ -27,9 +30,8 @@ export class LoginComponent implements OnInit {
   }
 
   logar() {
-    if (this.nome === 'admin' && this.senha === 12){
-      this.router.navigate(['/home'])
-    }
+    console.log(this.userform.value);
+
   }
 
 }
