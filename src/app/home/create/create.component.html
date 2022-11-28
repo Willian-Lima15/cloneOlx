@@ -1,3 +1,31 @@
-<p>
-  create works!
-</p>
+<div class="container">
+  <div class="tela-login mt-5 d-flex justify-content-center">
+    <form [formGroup]="userform" class="conteudo border mt-5 p-3 rounded">
+      <div class="titulo">
+        <h3>Cadastro</h3>
+      </div>
+      <div class="label">
+        <label for="user" class="form-label">Nome</label>
+      </div>
+      <div class="input">
+        <input type="text" class="form-control" id="user">
+      </div>
+      <div class="label mt-1">
+        <label for="mail" class="form-label">E-mail</label>
+      </div>
+      <div class="input">
+        <input type="email" class="form-control" id="mail">
+      </div>
+      <div class="label mt-1">
+        <label for="pass" class="form-label">Senha</label>
+      </div>
+      <div class="input">
+        <input type="password" class="form-control" id="pass">
+      </div>
+      <div class="link mt-2">
+        <a [routerLink]="['/login']">Já tenho conta</a>
+      </div>
+    </form>
+  </div>
+</div>
+
