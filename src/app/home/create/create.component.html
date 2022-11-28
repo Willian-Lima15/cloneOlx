@@ -8,22 +8,23 @@
         <label for="user" class="form-label">Nome</label>
       </div>
       <div class="input">
-        <input type="text" class="form-control" id="user">
+        <input type="text" class="form-control" formControlName="nome" id="user">
       </div>
       <div class="label mt-1">
         <label for="mail" class="form-label">E-mail</label>
       </div>
       <div class="input">
-        <input type="email" class="form-control" id="mail">
+        <input type="email" class="form-control" id="mail" formControlName="email">
       </div>
       <div class="label mt-1">
         <label for="pass" class="form-label">Senha</label>
       </div>
       <div class="input">
-        <input type="password" class="form-control" id="pass">
+        <input type="password" class="form-control" id="pass" formControlName="senha">
       </div>
       <div class="link mt-2">
-        <a [routerLink]="['/login']">Já tenho conta</a>
+        <a [routerLink]="['/login']" class="text-decoration-none">Já tenho conta</a>
+        <button class="btn btn-success btn-sm ms-5"(click)="gravar()">Gravar</button>
       </div>
     </form>
   </div>
